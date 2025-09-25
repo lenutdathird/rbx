@@ -1,0 +1,22 @@
+local HttpService = game:GetService("HttpService")
+
+local function sendWebhookMessage(embed, discordWebhook, AtUser, DiscordUserId)
+    local payload = {
+        embeds = {embed}
+    }
+
+    if AtUser then
+        payload.content = string.format("<@%s>", DiscordUserId)
+    end
+
+    http_request({
+        Url = discordWebhook,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = HttpService:JSONEncode(payload)
+    })
+end
+
+return sendWebhookMessage
