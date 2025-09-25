@@ -1,0 +1,40 @@
+return function(args)
+    local embed = {
+        title = "🎣 FISH IT | Fish Alert",
+        description = string.format("**%s** just caught a **%s %s**!", args.playerName, args.variant, args.fishName),
+        color = args.color or 16777215,
+
+        image = {
+            url = args.imageUrl
+        },
+
+        fields = {
+            {
+                name = "🌟 Rarity",
+                value = args.rarity or "Unknown",
+                inline = true
+            },
+            {
+                name = "🎯 Catch Chance",
+                value = string.format("`%s%%`", tostring(args.chance or "Unknown")),
+                inline = true
+            },
+            {
+                name = "💰 Sell Price",
+                value = string.format("`%s` Coins", tostring(args.price or "Unknown")),
+                inline = true
+            },
+            {
+                name = "⚖️ Weight",
+                value = string.format("`%s kg`", tostring(args.weight or "Unknown")),
+                inline = true
+            },
+        },
+
+        footer = {
+            text = string.format("Lenut Hub • %s", os.date("%B %d, %Y at %I:%M %p"))
+        }
+    }
+
+    return embed
+end
