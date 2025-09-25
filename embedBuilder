@@ -1,7 +1,7 @@
 return function(args)
     local embed = {
         title = "🎣 FISH IT | Fish Alert",
-        description = string.format("**%s** just caught a **%s %s**!", args.playerName, args.variant, args.fishName),
+        description = string.format("**||%s||** just caught a **%s %s**!", args.playerName, args.variant, args.fishName),
         color = args.color or 16777215,
 
         image = {
