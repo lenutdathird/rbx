@@ -32,7 +32,7 @@ return function(args)
         },
 
         footer = {
-            text = string.format("Lenut Hub • %s", os.date("%B %d, %Y at %I:%M %p"))
+            text = string.format("discord.gg/LNR • %s", os.date("%B %d, %Y at %I:%M %p"))
         }
     }
 
